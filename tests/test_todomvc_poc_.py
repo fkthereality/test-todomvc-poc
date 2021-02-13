@@ -15,8 +15,8 @@ def test_mvc_poc():
 
     browser.all('#todo-list>li').element_by(have.exact_text('a')). \
         double_click()
-    browser.all('.editing .edit').element_by(be.visible). \
-        type(' to be canceled').press_escape()
+    browser.all('#todo-list>li').element_by(have.css_class('editing')). \
+        element('.edit').type(' to be canceled').press_escape()
 
     browser.all('#todo-list>li').element_by(have.exact_text('a')).hover(). \
         element('.destroy').click()
