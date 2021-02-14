@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "test-todomvc-poc"
+name = "test-todomvc"
 version = "0.1.0"
-description = "01-05-s-poc-test-md"
+description = "a1-06-first-refactoring-10-task-md"
 authors = ["Datsenko Volodymyr (Shemar) <nastavnyk@gmail.com>"]
 
 [tool.poetry.dependencies]

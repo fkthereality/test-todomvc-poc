@@ -1,23 +1,19 @@
-from selene.support.shared import config
-from test_todomvc_poc.helpers import app
-
-config.set_value_by_js = True
+from test_todomvc.helpers import app
 
 
-def test_mvc_poc():
+def test_common_todos_management():
     app.open_app()
 
     app.add('a', 'b', 'c')
-
     app.assert_todos('a', 'b', 'c')
-
-    app.cancel_editing('a', 'a to be canceled')
-
-    app.delete('a')
-    app.assert_todos('b', 'c')
 
     app.edit('b', 'b edited')
 
     app.complete('b edited')
     app.clear_completed()
+    app.assert_todos('a', 'c')
+
+    app.cancel_editing('a', 'a to be canceled')
+
+    app.delete('a')
     app.assert_todos('c')
